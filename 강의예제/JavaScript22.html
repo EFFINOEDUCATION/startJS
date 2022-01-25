@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체관련 키워드</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    function person(name){
+        this.name = name;
+        this.hello = function() {
+            console.log('안녕! 난 ' + this.name + '야!');
+        }
+    }
+
+    var student = new person('철수');
+
+    var student2 = {
+        name : '영희',
+        hello : function(){
+            console.log('안녕! 난 ' + this.name + '야!');
+        }
+    }
+
+    // instanceof 키워드
+    // 해당 객체가 어느 함수를 통해 생성됐는지 확인이 가능함.
+
+    student.hello();
+    student2.hello();
+
+    console.log(student instanceof person);
+    // student는 person이라는 생성자함수를 통해 생성됐으므로 true
+    console.log(student2 instanceof person);
+    // student2는 변수에 직접 객체를 선언해주었기 때문에 person을 통해 생성되지 않았다.
+    // 그래서 false를 반한.
+
+    // new 키워드 확인
+    // 생성자함수를 통해 객체를 생성할때 new를 붙여주는 이유
+
+    var student = new person('기웅');
+
+    student.hello();
+
+    var student3 = person('경희');
+    // new를 사용하지 않고 객체를 생성했을때 에러는 발생하지 않지만,
+
+    console.log(student3);
+    // 해당 변수는 undefined로, 선언만 되어있고 값이 할당이 안되어 있는 상태이며
+    student3.hello();
+    // 객체 내부를 조회할 시 존재하지 않는 내용이라고 에러가 발생한다.
+
+
+    
+</script>
+</html>

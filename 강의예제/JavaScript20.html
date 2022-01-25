@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+    <div>
+        클릭하세요
+    </div>
+</body>
+<script>
+   
+    console.log(this);
+    // this 는 window를 나타냄. window는 웹 페이지 하나를 의미, 추후 설명
+
+    var testValue = '전역으로 설정한 변수';
+    console.log(this.testValue);
+    // 전역으로 설정한 변수는 window 아래로 들어감 그래서 this.value는 전역변수를 찾아간다.
+
+   var test1 = {
+        testValue : '객체 안의 변수',
+        func : function (){
+            return this.testValue;
+        }
+    }
+    
+    console.log(test1.func());
+    // 객체안에서 사용하는 this는 객체 자체를 나타냄
+
+    var test2 = function (testValue){
+        console.log(this.testValue);
+    }
+
+    test2('함수내부의 변수');
+    // 함수를 내부에 있는 this는 전역변수, window를 가리킨다.
+
+    let test3 = function (testValue){
+        this.testValue = testValue;
+        // 여기서 this는 생성자 함수 내부를 의미
+        this.func = function(){console.log(this.testValue)}
+    }
+
+    var thisTest = new test3('생성자로 테스트');
+    console.log(thisTest.testValue);
+    thisTest.func();
+    // 생성자를 통해 만든 객체의 this는 객체 내부를 의미
+
+
+    document.body.onclick = function() {
+        console.log(this);
+    }
+    // 이벤트 리스너라는 이벤트에서는 다르게 작동함.
+    // this에는 클릭한 영역에 대한 정보가 담겨서 나온다
+    // 이 부분은 내부적으로 작동하는것이기 때문에 외워야함.
+
+    // document.body.onclick = function() {
+    //     function infn() {
+    //         console.log(this);
+    //     }
+    //     infn();
+    // }
+    // 이벤트 리스너 안에 생성해준 함수는 함수이기 때문에 전역변수 window를 가르킴
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체의 캡슐화와 상속</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+
+
+    function Product(n, p, mb){  
+        let name = n;
+        let price = p;
+        let madeBy = mb;
+        // 초기화
+
+        this.getName = function() {
+            return name;
+        }
+
+        this.getPrice = function() {
+            return price;
+        }
+
+        this.getMadeBy = function(){
+            return madeBy;
+        }
+
+        this.setName = function(n) {
+            name = n;
+        }
+
+        this.setPrice = function(p) {
+            price = p;
+        }
+
+        this.setMadeBy = function(mb) {
+            madeBy = mb;
+        }
+    }
+    // 객체의 캡슐화
+
+
+    var galaxy = new Product('갤럭시','100만원','삼성');
+
+    console.log(galaxy);
+    // 객체가 생성자 함수를 통해 정상적으로 생성됐음을 확인
+    console.log(galaxy.name);
+    // 하지만 기존의 방식대로 접근했을때 undefined가 발생한다.
+    console.log(galaxy.getName());
+    console.log(galaxy.getPrice());
+    galaxy.setPrice('90만원');
+    console.log(galaxy.getPrice());
+    // 이런식으로 생성자 함수 내부에 설정해준 별도 함수를 통하여 값을 가져올 수 있다.
+    // 값을 바로 가져오지 못하고 특정 함수나 경로를 통하여만 접근할수 있다.
+    // 이것이 객체의 캡슐화 이고, 객체의 캡슐화를 통해 객체의 보안성을 유지할 수 있다.
+
+    console.warn(name);
+    // 생성자 함수 내부에서 선언한 값은 외부에서 사용할 수 없음.
+
+    Product.prototype.getExplane = function() {
+        return `상품 이름은 ${this.getName()}이고 가격은 ${this.getPrice()} 입니다. ${this.getMadeBy()}에서 생산했습니다.`
+    }
+    
+    console.log(galaxy.getExplane());
+
+    function Iphone(n,p,mb,v){
+        this.p = Product;
+        this.p(n,p,mb);
+
+        let version = v;
+
+        this.getVersion = function(){
+            return version;
+        }
+
+        this.setVersion = function(v){
+            version = v;
+        }
+    }
+
+    Iphone.prototype = Product.prototype;
+
+    var iphone = new Iphone('아이폰 13','100만원','apple','프로');
+    
+    console.log('아이폰의 이름은?'+ iphone.getName());
+
+    console.log('Iphone 를 통해 생성됐나요?' + (iphone instanceof Iphone));
+    console.log('Product 를 통해 생성됐나요?' + (iphone instanceof Product));
+
+</script>
+</html>

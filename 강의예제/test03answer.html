@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 예제 3</title>
+</head>
+<body>
+    <div id="battleLog">
+    </div>
+</body>
+<script>
+
+    function createHero(name, health , attack, defence){
+        this.name = name;
+        this.health = health;
+        this.attack = attack;
+        this.defence = defence;
+
+        this.lostHp = function(damage){
+            let dmg = 0;
+
+            if((damage - this.defence)<=0){
+            }else{
+                dmg = (damage-this.defence);
+                this.health -= dmg;
+            }
+            return dmg;
+        }
+
+        this.levelUp = function(){
+            this.health += 3;
+            this.attack += 1;
+            this.defence += 1;
+        }
+    }
+
+    function createEnemy(name, health, attack, defence){
+        this.name = name;
+        this.health = health;
+        this.attack = attack;
+        this.defence = defence;
+
+        this.lostHp = function(damage){
+            let dmg = 0;
+
+            if((damage-defence)<=0){
+            }else{
+                dmg = (damage-defence);
+                this.health -= dmg;
+            }
+            return dmg;
+        }
+    }
+
+
+
+
+        let Enemy1 = new createEnemy('슬라임',5,2,0);
+        let Enemy2 = new createEnemy('고블린',10,5,1);
+        let Enemy3 = new createEnemy('오크',16,6,3);
+        let Enemy4 = new createEnemy('보스',20,8,3);
+
+        let EnemyCount = 0;
+        let EnemyArray = [Enemy1,Enemy2, Enemy3, Enemy4];
+        
+        let Hero = new createHero(prompt('용사의 이름을 입력해주세요.')
+        ,Math.floor(Math.random()*10+50)
+        ,Math.floor(Math.random()*3+5)
+        ,Math.floor(Math.random()*3));
+
+        let battleLog = document.getElementById('battleLog');
+
+        let attckToMonster = function(Enemy,Hero){
+            let damage = Math.floor(Math.random()*Hero.attack+1);
+            battleLog.innerHTML+= `${Enemy.name}에게 피해를 ${Enemy.lostHp(damage)} 주었습니다.</br>`;
+            return Enemy.health;
+        }
+
+        let attckToHero = function(Enemy,Hero){
+            let damage = Math.floor(Math.random()*Enemy.attack+1)
+            battleLog.innerHTML += `피해를 ${Hero.lostHp(damage)} 받았습니다.</br>`
+            battleLog.innerHTML += `HP가 ${Hero.health} 남았습니다.</br>`
+            return Hero.health;
+        }
+        
+        battleLog.innerHTML += `${Hero.name}의 여행이 시작되었습니다.`;
+        battleLog.innerHTML += `<h3>${Hero.name}</h3>`
+        battleLog.innerHTML += `HP : ${Hero.health}</br>`
+        battleLog.innerHTML += `atk : ${Hero.attack}</br>`
+        battleLog.innerHTML += `def : ${Hero.defence}</br>`
+
+        while(Hero.health > 0 && EnemyCount < 4){
+
+            let  Enemy = EnemyArray[EnemyCount];
+            battleLog.innerHTML += `<h3> ${Enemy.name} 을 만났습니다!!</h3>`;
+
+            while(Enemy.health > 0){
+                
+                let EnemyHp = attckToMonster(Enemy,Hero);
+                if(EnemyHp<=0){
+                    battleLog.innerHTML +=`<h4> ${Enemy.name}에게 승리했습니다!!!</h4>`;
+                    Hero.levelUp();
+                    EnemyCount = EnemyCount + 1;
+                    break;
+                }
+    
+                let HeroHp = attckToHero(Enemy,Hero);
+                if(HeroHp<=0){
+                    battleLog.innerHTML +=`<h4>패배했습니다 ㅜㅜ</h4>`;
+                    break;
+                }
+            } 
+        }
+
+
+</script>
+</html>

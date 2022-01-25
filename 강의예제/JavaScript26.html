@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Document Object Model)의 설명</title>
+</head>
+<body>  
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+    <div id="HTMLtest">
+
+    </div>
+    <div id="TEXTtest">
+
+    </div>
+</body>
+<script>
+    // DOM 에는 Node라는 개념이 등장
+    // HTML 즉 웹 페이지는 노드(Node)로 이루어져 있음.
+    // HTML은 노드 트리라고 불리는 계층적 구조로 이루어져 있음
+    // 페이지를 구성하는 대표적인 노드는
+    /*
+        문서 노드(document Node) : HTML 문서 전체를 나타냄
+        요소 노드(element Node) : 모든 HTML 요소는 요소 노드이며, 속성 노드를 가질 수 있는 유일한 노드임
+        속성 노드(attribute Node) : 모든 HTML 요소의 속성은 속성 노드이며 요소 노드에 관한 정보를 가지고 있음
+        텍스트 노드(text Node) : HTML 문서의 모든 텍스트틀 의미
+        주석 노드(comment Node) : HTML 문서의 모든 주석을 의미 
+    */
+
+    // 노드 구조를 사용하여 웹 페이지에 요소를 넣을수 있음
+
+    var elementNode = document.createElement('h3');
+    // h3 태그를 생성 (요소 노드 생성)
+
+    var textNode = document.createTextNode('요소 노드 안의 텍스트노드 입니다.');
+    // 텍스트 노드 생성
+    elementNode.appendChild(textNode);
+    // 요스 노드 하위에 텍스트 노드를 붙임
+
+    document.body.appendChild(elementNode);
+    // document객체 아래의 body아래에 텍스트 노드가 들어가있는 요소 노드를 붙인다.
+
+    // innerHTML
+
+    let HTMLarea = document.getElementById('HTMLtest');
+    // getElementById
+    // HTML 태그의 id를 통하여 태그 정보를 가져욤
+    
+    console.warn(HTMLarea);
+    // 가져온 태그의 정보
+    
+    console.warn(HTMLarea.innerHTML);
+    // 가져온 태그의 내부 정보 확인
+    // 태그만 만들어주고 아무것도 넣지 않았기 때문에 비어있음. 
+    
+    HTMLarea.innerHTML = HTMLarea.innerHTML + `<h3>innerHTML을 통하여 내용을 집어넣습니다.</h3> </br>`;
+    // innerHTML을 통해 태그안에 내용을 넣어줌
+
+    console.log(HTMLarea.innerHTML);
+    //  태그 안에 넣어준 내용이 HTML로 변환되어서 나타남.
+
+   // area.innerHTML = '';    
+    // 내부 정보 초기화
+
+    let TEXTtest = document.getElementById('TEXTtest');
+
+    TEXTtest.innerText += `<h3>innerTEXT을 통하여 내용을 집어넣습니다.</h3> </br>`;
+
+    // 넣어준 정보가 HTML태그로 변환되지 않고 Text가 그대로 들어가진다
+    // innerHTML, innerText를 사용하면 처음 시험해봤던것처럼 노드를 하나하나 생성해서 넣지 않아도
+    // 화면에 그려줄수 있다.
+
+
+    // 노드 삭제
+    //area.remove();
+    // 선택한 노드 하위에 있는 노드들을 전부 지워버리는 방법
+    // element로 가져온것 말고도 document.body.remove() 처럼 직접 노드를 선택하여 삭제도 가능하다.
+
+</script>
+</html>

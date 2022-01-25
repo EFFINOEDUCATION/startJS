@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터의 형 변환</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    
+    var test1 = 7 + 7;
+    console.log(test1);
+    console.log(typeof(test1));
+    var test2 = 7 + "7";
+    console.log(test2);
+    console.log(typeof(test2));
+    var test3 = "7" + 7;
+    console.log(test3);
+    console.log(typeof(test3));
+    var test4 = "7" + "7";
+    console.log(test4);
+    console.log(typeof(test4));
+    var test5 = 7 + 7+"7";
+    console.log(test5);
+    console.log(typeof(test5));
+    var test6 = 7 + "7" + 7;
+    console.log(test6);
+    console.log(typeof(test6));
+    var test7 = "7" + 7 + 7;
+    console.log(test7);
+    console.log(typeof(test7));
+    var test8 = "7" +(7+7) ;
+    console.log(test8);
+    console.log(typeof(test8));
+     
+    // 숫자일 경우 사칙연산으로 계산이 되지만, 
+    //문자열일 경우 계산이 아닌 문자열이 합쳐짐.
+    // 숫자 + 문자열 = 문자열
+    // 숫자 + 문자열 + 숫자  = 문자열
+    // 문자열 + 숫자 + 숫자 = 문자열
+    
+</script>
+</html>

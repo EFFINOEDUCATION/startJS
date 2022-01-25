@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 if와 esle</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    // 조건문
+    // 조건(true, false)에 따라서 해당 내용을 실행할지, 하지 말지 판단하는 문법
+    // 조건의 결과가 true일 때에는 실행 , 반대로 false 일때는 실행하지 않는다.
+
+    var a = 10 ;
+
+    if(a === 10){
+        // a === 10 은 참이기 때문에 내용을 실행
+        console.log('조건이 참(true)입니다. 내용을 실행합니다.');
+    }
+
+    if(a === 5){
+        // a === 5 는 거짓이기 때문에 내용을 실행하지 않음.
+        console.log('조건이 거짓(false)입니다. 내용을 실행하지 않습니다.');
+    }
+
+    // if~else 조건문
+    if(a === 10){
+        // 먼저 if문에서 조건을 확인
+        console.log('조건이 참(ture)입니다.');
+        // 조건이 참일경우 if문 아래에 있는 내용을 실행
+    }else{
+        console.log('조건이 거짓(false)입니다.');
+    }
+
+    if(a === 5){
+        console.log('조건이 참(ture)입니다.');
+    }else{
+        // if문에서 확인한 조건이 거짓 일경우
+        // else문에 있는 내용을 실행한다.
+        console.log('조건이 거짓(false)입니다.');
+    }
+
+    // if ~ else if ~ else 조건문
+    if(a === 1){
+        // 가장 먼저 if의 조건을 확인
+        console.log('a는 1 입니다.');
+    }else if (a === 3){
+        // if를 확인 후 else if의 조건을 확인
+        console.log('a는 3 입니다.');
+    }else{
+        // if, else if 모두 조건이 참이 아닐때 else 문 실행
+        console.log('a는 1도 3도 아닌 다른 값입니다.');
+    }
+
+    if(a > 5 && a <= 10){
+        // && and 조건문
+        // &&으로 묶여있는 조건문(여러개가 가능) 모두 만족을 해야 참입니다.
+        console.log('a는 5보다 크고 10보다 같거나 작습니다.')
+    }else if( a <= 5){
+        console.log('a는 5보다 같거나 작습니다.');   
+    }else{
+        console.log('a는 10보다 큽니다.')
+    }
+
+    if(a === 5 || a === 10){
+        // || or 조건문
+        // || 으로 묶여있는 조건문(여러개가 가능) 중 한가지만 만족해도 참입니다.
+        console.log('a는 5나 10 둘 중 하나입니다.')
+    }else{
+        console.log('a는 5나 10 둘 다 아닙니다.')
+    }
+
+</script>
+</html>

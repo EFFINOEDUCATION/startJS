@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식의 활용법</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    // 메타문자를 이용한 자릿수 확인
+    // . 은 모든 문자(공백, 특수문자 포함)
+    // 1글자를 뜻하는 표현
+
+    var regExp = /^......-.......$/;
+
+    var num = '951203-1401517';
+
+    console.log(regExp.test(num));
+    // 찾는 내용이 있을경우 true, 없으면 false 가 나오는것을 이용하여 조건문 응용
+    if(regExp.test(num)){
+        console.log('내용은 모르겠지만 자릿수는 맞네요!');
+    }else{
+        console.log('이런 자릿수도 맞지가 않네요!');
+    }
+
+    // 하지만 이런 방법으로는 정확하게 찾아낼수가 없다.
+    // 때문에 추가적으로 사용하는 메타문자
+
+    // \d : 숫자[0-9]와 동일한 의미
+    // \w : 아무 단어(숫자 포함) 언더바(_)를 포함한 [A-Za-z0-9_]와 동일한의미
+    // \s : 공백문자(탭, 띄어쓰기, 줄바꿈 등)을 포함한 하나의 공백문자
+    // \D : 숫자가 아닌 문자 [^0-9]와 동일한 의미
+    // \W : 아무 단어가 아닌것 [^A-Za-z0-9_] 와 동일한 의미
+    // \S : 공백이 아닌 하나의 문자(공백 제외한 문자)
+
+    var regExp = /^\d\d\d\d\d\d-\d\d\d\d\d\d\d$/;
+
+    console.log(regExp.test(num));
+
+    if(regExp.test(num)){
+        console.log('내용이 주민등록번호 형식에 맞는진 모르지만 최소한 숫자와 자릿수가 맞아요!');
+    }else{
+        console.log('문자가 들어가있거나 자리수가 맞지 않네요!');
+    }
+    
+
+    // 수량문자
+    // 여기서 n은 숫자와 문자 구분없는 일반 문자를 의미
+    // n+ : n이 적어도 1개 이상 존재
+    // n* : n이 0회 이상 반복, a가 0개 또는 여러개
+    // n? : n이 0개 또는 1개
+    // n{x} : n이 x개
+    // n{x,y} : n이 x개 이상 y개 이하
+    // n{x,} : n이 x개 이상
+    // n{,y} : n이 y개 이하
+
+
+    var regExp = /^(\d{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1]))-[1-4]\d{6}$/;
+
+    // |를 하나의 자리에 여러 조건을 같이 넣어줄수 있다.
+    // or의 이미를 가짐.
+    // 여기서 맨 앞의 ^는 부정의 의미가 아닌 시작의 의미
+    // $는 종료해준다는 뜻.
+    // 간단하게 찾을 부분을 ^과 $로 찾고싶은 부분의 시작과 끝을 정해줄수 있음
+
+    if(regExp.test(num)){
+        console.log('모든 조건 통과했고 이젠 완벽합니다!');
+    }else{
+        console.log('모든 조건을 통과하지 못했습니다!')
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문, do-while문의 사용법과 특징</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+
+    var i = 11;
+    // 변수선언
+    while(i <= 10){
+//  while(조건내용)
+        console.log(i + '번째 반복입니다.');
+        i++;
+    // 변수의 변경
+    // while문을 돌릴때 변수의 값 변경은 반드시 필요함!!
+    // 만일 조건내용을 영원히 만족하지 못한다면 반복문이 종료없이 무한정으로 반복됨
+    }
+
+    var i = 11;
+    // 변수선언
+    do{
+    // 실행문
+        console.log('현재 i 의 값은? '+ i);
+        i++
+    }while(i<=10)
+//   while(조건내용)
+
+//  while 문은 조건을 검사하고 반복을 시작.
+//  do~while은 조건 검사 없이 무조건 최초 1번은 실행한 후 조건을 확인
+</script>
+</html>

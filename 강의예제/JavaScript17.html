@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+
+    function test1() {
+        console.log('일반적인 함수 선언법');
+    }
+
+    test1();
+    // 일반적인 함수의 선언 후, 사용방법
+
+    var test2 = function(){
+        console.log('변수안에 함수도 선언가능')
+    };
+    // 함수는 변수에 선언 후 가져 올 수 있음.
+    test2();
+
+    // 화살표 함수
+    // ES6 에서 새로 나온 방법
+    // 기존에서 함수를 선언할때 function () {} 으로 작성하던 내용을
+    // () => {} 로 줄여서 사용가능함.
+    // 매개변수를 받아서 처리하거나, 값을 리턴시키는 등 함수의 기능을 전부 사용할 수 있다.
+
+    var test3 = (num1, num2) => {
+        console.log('화살표 함수입니다.')
+        return num1 + num2;
+    }
+
+    var test4 = (num1, num2) => num1 + num2;
+
+    console.log(test3(2,3));
+    console.log(test4(1,2));
+    //  함수를 호출 -> 화살표 함수입니다 출력.
+    // 이후 return에 의해 들어간 매개면수 두개가 합쳐진 갑이 콘솔에 출력
+</script>
+</html>

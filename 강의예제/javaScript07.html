@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 switch</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    // swith문
+    var phone = '갤럭시';
+
+    switch(phone){
+        case '아이폰':
+            console.log('아이폰 입니다.');
+            break;
+        case'갤럭시':
+            console.log('갤럭시 입니다.');
+            break;
+        case '아이패드':
+            console.log('아이패드 입니다.');
+            break;
+        case 'Z플립':
+            console.log('Z플립 입니다.');
+            break;
+        default:
+            console.log('아이폰도 갤럭시도 아이패드도 Z플립도 아니네요.');
+            break;
+    }
+    // phone의 값을 검사해서 일치하는 값을 찾음.
+    // break는 반드시 적어주어야함!!
+    // 만약 case에서 같은 내용을 찾지 못한다면 default에 있는 내용을 실행
+</script>
+</html>

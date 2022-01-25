@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습 예제 안내 (2,3 챕터)</title>
+</head>
+<body>
+</body>
+<script>
+    // 1번
+    // 100점 만점에 95점 이상은 A+,95점 미만 90점 이상은 A,90점 미만 85점 이상은 B+,85점 미만 80점 이상은 B,80점 미만 70점 이상은 C+
+    // 나머지는 D+ 를 출력하는 조건문 작성
+
+    var a = 95;
+
+    if(a>=95){
+        console.log( a + '는 A+에 해당하는 점수입니다.');
+    }else if(a>=90){
+        console.log( a + '는 A에 해당하는 점수입니다.');
+    }else if(a>=85){
+        console.log( a + '는 B+에 해당하는 점수입니다.');
+    }else if(a>=80){
+        console.log( a + '는 B에 해당하는 점수입니다.');
+    }else if(a>=70){
+        console.log( a + '는 C+에 해당하는 점수입니다.');
+    }else{
+        console.log( a + '는 D+입니다. 재수강 하세요 !!');
+    }
+
+    // 2번
+    // 값이 홀수인지 짝수인지 구별하는 조건문 작성
+
+    var b = 10;
+    
+    if( b % 2 === 0){
+        console.log('짝수입니다 !!');
+    }else{
+        console.log('홀수입니다 !!');
+    }
+
+    // 3번
+    // while 문을 통해 1부터 10까지 반복하면서 2의 배수만 콘솔창에 출력
+
+    var c = 1;
+
+    while(c <= 10){
+        if(c % 2 === 0){
+            console.log(c + '는 2의 배수입니다!!');
+        }
+        c++;
+    }
+    // 4번
+    // 특정 변수값의 구구단을 1단부터 9단까지 출력
+
+    var gugu = 3;
+
+    for(var i = 1; i<10; i++){
+        console.log( gugu + '*' + i + '=' + gugu*i);
+    }
+</script>
+</html>

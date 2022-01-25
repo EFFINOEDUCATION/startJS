@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형 이해하기</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+
+    var name = '갤럭시';   
+    // string
+    var price = 800000;
+    // number
+    var check = true;
+    // boolean
+    var fruits = ['사과','바나나','오렌지'];
+    // object
+    var prod = {
+        name : '아이폰',
+        price : 1000000
+    };
+
+    var testFunction = function testFnc(num1, num2){
+        console.log(num1 + num2);
+    }
+
+    var isNull = null;
+
+    var isUndefined;
+
+    console.log(name + '의 타입은? ' + typeof(name));
+    console.log(price + '의 타입은? ' + typeof(price));
+    console.log(check + '의 타입은? ' + typeof(check));
+    console.log(fruits + '의 타입은? ' + typeof(fruits));
+    console.log(fruits[0] + '의 타입은? ' + typeof(fruits[0]));
+    console.log(prod + '의 타입은? ' + typeof(prod));
+    console.log(prod.name + '의 타입은? ' + typeof(prod.name));
+    console.log(testFunction + '의 타입은? ' + typeof(testFunction));
+    console.log(isNull + '의 타입은? ' + typeof(isNull));
+    console.log(isUndefined + '의 타입은? ' + typeof(isUndefined));
+
+    // typeof(변수명) 은 해당 변수가 어떤 자료형인지를 알아보는 함수
+
+
+    var testValue = 123;
+    console.log(testValue + '의 타입은? ' + typeof(testValue));
+
+    testValue = '123'
+    console.log(testValue + '의 타입은? ' + typeof(testValue));
+
+    testValue = true;
+    console.log(testValue + '의 타입은? ' + typeof(testValue));
+
+    // 같은 변수에 다른값을 넣어주면, 넣어준 값에 따라서 타입이 자동으로 변함
+    // 자바스크립트의 동적 타입
+</script>
+</html>

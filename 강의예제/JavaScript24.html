@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window 객체에 대한 설명</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    
+    // 자바스크립트에서 window는 크롬에서의 탭 하나, 
+    //웹브라우저의 창. 보이는 화면 자체를 의미한다.
+    // window는 자바스크립트의 최상위 객체이며,
+    // DOM(document object model) 과
+    // BOM(browser object model)를 포함하고 있다.
+
+    // window는 모든 객체의 조상, 상위에 위치하고 있다.
+    console.log(window);
+
+    // window를 콘솔에 찍어보면 우리가 그동한 사용했던
+    // 변수의 타입까지도 전부 선언되어있다.
+
+    var a = '전역변수에요!';
+    
+    console.log(a);
+    console.log(window.a);
+
+    // 일반적으로 선언한 변수는  window객체안으로 들어가게 된다.
+    // window는 모든 객체를 포함하고 있기 때문에
+    // 생략이 가능하며 window.a 의 호출과 a 의 호출의
+    // 결과값이 같은 이유
+
+
+    // window.open('https://www.naver.com','네이버','resizeable=no,width=1366,height=720');
+
+    // window.open('팝업주소','팝업이름','팝업설정');
+    // https://www.w3schools.com/jsref/met_win_open.asp
+   
+    /* 
+    width: 팝업창 가로길이
+    height : 팝업창 세로길이
+    toolbar = no : 단축도구장(툴바) 표시안함
+    menubar = no : 메뉴창(메뉴바) 표시안함
+    location = no : 주소창 표시안함
+    scrollbars = no : 스크롤바 표시안함
+    status = no : 아래상태바창 표시안함
+    */
+  
+    // window.open() 을 사용하여 새로운 창을 열수도 있다.
+    // 반대로 window.close()를 사용하면 현재 보고있는 창이 닫힌다.
+
+    // setTimeout, setInterval
+    // setTimeout은 특정시간 이후에 작동시키는 코드
+    // setInterval은 특정시간 이후 반복을 시키는 코드
+    
+    var test1 = window.setTimeout(function(){
+        console.log('2초 뒤에 실행됩니다.');
+    },2000) 
+
+    var test2 = window.setInterval(function(){
+        console.log('1초마다 반복됩니다.');
+    },1000)
+
+
+    // 실행이나 반복을 멈추어야 할때
+    // clearTimeout, clearInterval 두가지 명령어를 사용하여 멈출 수 있다.
+
+    var test3 = window.setTimeout(function(){
+        console.log('실행한지 5초가 지나 반복이 멈추었습니다.')
+        clearInterval(test2);
+    }, 5000)
+    //clearTimeout(test1);
+    //clearInterval(test2);
+
+    // setTimeout과 setInterval을 선언해줄때 사용한 변수를 통해 작동을 멈출수 있다.
+    // 이 4가지를 사용하여 여러가지 작업에 사용이 가능.
+
+    
+</script>
+</html>

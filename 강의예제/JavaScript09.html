@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 for in</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+
+<script>
+    var fruits = ['사과','오렌지','바나나','샤인머스캣','망고'];
+    for(fruit in fruits){
+        console.log(fruit + '번째 반복입니다.');
+        // 자동으로 fruits 배열의 길이를 찾아, 배열의 길이만큼 반복을 진행함.
+        // 여기서 중요한것은 fruit 안에 배열의 내용이 들어가는것이 아닌
+        // 숫자만이 자동으로 1씩 증가되면서 반복이 된다.
+
+        console.log('fruits의' + 'i번째의 과일은? ' + fruits[fruit]);
+    }
+
+    console.log(fruit);
+
+    for(var i = 0 in 10){
+        // 배열의 길이를 찾아 반복시키는 것이므로, 배열의 위치에 숫자를 넣어도 반복하지 않는다.
+        console.log(i + '번째 반복입니다.');
+    }
+
+</script>
+
+</html>

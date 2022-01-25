@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    var arr1 = new Array();
+    var arr2 = new Array(3);
+    var arr3 = [];
+    var arr4 = [1,2,3,4,5];
+    // 배열을 선언하는 4가지 방법. 어느것을 사용하든 큰 차이가 없음.
+
+    var arr5 = [1,'문자열',true,[1,2,3],{name: '아이폰', price: 100000},undefined];
+
+    var array = ['아이폰','갤럭시','아이패드','서피스'];
+        console.log(array);
+        console.log(array[0]);
+        console.log(array[1]);
+        // 배열 (Array)
+
+    console.log('배열의 길이는? ' + array.length);
+
+    for(var i = 0; i<array.length; i++){
+        // 변수선언 / 조건문 / 변수의 값 변경
+        // 변수 i를 선언
+        // (배열변수명).length는 배열의 
+        // 변경되는 i의 값을 이용해서 배열에 있는 값을 한번에 꺼내올 수 있음.
+        // i가 0부터 fruit 배열의 길이보다 작을때까지만 반복!!
+        console.log('배열의 ' + i + '번째의 값은' + array[i] + '입니다!!');
+    }
+
+    var arr = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15]];
+    // 배열안에 배열을 집어넣는 방법도 가능.
+
+
+    for (var i =0; i<arr.length; i++){
+         for(var j = 0; j<arr[i].length; j++){
+             console.log(arr[i][j]);
+         }
+    }
+    // 이중배열은 배열명[첫번째 배열의 인덱스][두번째 배열의 인덱스]로 불러올수 있다.
+    // N개가 겹쳐있는 배열 또한 같은 방법으로 불러올 수 있음. arr[n번째][n+1번째][n+2번쩨][...];    
+
+</script>
+</html>

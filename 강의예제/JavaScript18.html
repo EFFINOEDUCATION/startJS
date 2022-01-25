@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let과 Const</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    
+    // 변수의 선언에는 var 이외에 let과 const도 존재함.
+
+    var num1 = 1;
+    let num2 = 2;
+    const num3 = 3;
+
+    console.log(num1);
+    console.log(num2);
+    console.log(num3);
+    // 선언후 사용하는데는 셋 다 차이가 없음
+    
+    num1 = 4;
+    num2 = 4;
+   // num3 = 4;
+
+    // 선언 이후 다시 선언을 하려고 할때, 에러가 발생한다.
+    // const로 선언한 변수는 최초 선언한 이후 값을 변경할수 없기때문.
+    // var 과 let 으로 선언한 변수는 값이 변한다.
+
+    // var과 let의 차이
+    // var 은 선언한 이후 모든 위치에서 사용이 가능하다.
+
+ //   console.log(errorTest);
+    console.log(varTest);
+    var varTest = '변수선언 위치 확인입니다.';
+    // 자바스크립트는 var로 선언한 변수나 function으로 
+    //선언한 함수들을 가장 먼저 읽어들이는 구조를 가진다.
+    // 변수의 선언이 되어있지 않은 상태에서 변수를
+    // 호출을 하면 에러가 발생하는것이 정상이지만,
+    // var로 선언을 했다면 자바스크립트에서 
+    // 가장 먼저 읽어들이기 때문에 에러가 발생하지 않은
+    // undefined (정의되지 않음) 이 반환된다.
+    
+    // 규모가 작은 사이트에서는 큰문제가 발생하지 않지만,
+    // 사이트의 규모가 커질수록 변수들의 관리와
+    // 다른 변수값을 가져올 가능성이 있기때문에
+    // ES6에서 나온것이 let으로 변수를 선언하는것이다.
+
+   // console.log(letTest);
+    let letTest = 'let으로 선언합니다.';
+    console.log(letTest);
+
+    // let은 var 다르게 먼저 읽어들이지 않기때문에,
+    // 변수의 선언보다 사용을 먼저한다면
+    // 에러가 발생한다.
+
+    if(true){
+        var a = 5;
+    }
+    console.log(a);
+
+    if(true){
+        let b =5;
+    }
+    console.log(b);
+    
+</script>
+</html>

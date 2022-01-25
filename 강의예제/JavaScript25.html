@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(Browser Object Model)의 설명</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    //BOM (Browser Object Mapper)
+    //BOM에는 navigator객체, screen객체, location객체, history객체가 있다
+
+    // navigator
+    // 웹 페이지를 실행하고 있는 브라우저에 대한 정보
+
+    console.log(navigator);
+    console.log(navigator.userAgent);
+    // 브라우저 정보
+    console.log(navigator.appName);
+    // 브라우저의 이름
+    console.log(navigator.language);
+    // 사용언어
+    // 이외에도 많은 정보를 조회할수 있다.
+
+    // screen
+    // 현재 보고있는 화면에 대한 정보
+    // 웹 페이지가 아닌 운영체제의 화면에 대한 속성을 가진다.
+
+    console.log(screen);
+    console.log(screen.height);
+    console.log(screen.width);
+    // 보고있는 화면의 높이와 넓이를 가져올수 있다.
+
+    // location
+    // 주소에 대한 정보를 가지고있는 객체
+
+    console.log(location);
+    console.log(location.host);
+    // 현재 호스트
+    console.log(location.hostname);
+    // 호스트 이름
+
+    // 이외에도 location.href()를 통해 다른 페이지로 이동하거나
+    // location.reload() 로 페이지 새로고침이 가능하다.
+
+    // history
+    // 브라우저의 방문 기록에 관한 객체
+    // 페이지 뒤로가기, 앞으로가기 등 브라우저의 기록에 대한 객체
+
+    console.log(history);
+    // history.back() 나  history.foward() , history.go(특정인덱스)
+    // 등을 통하여 기록된 히스토리중 특정 기록이 있는 위치로 이동 가능하다.
+</script>
+</html>

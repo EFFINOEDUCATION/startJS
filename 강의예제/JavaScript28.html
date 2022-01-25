@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 속성</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+
+    var a = 0.1;
+    var b = 0.2;
+
+    console.log(a + b);
+    // 컴퓨터는 실제로 2진법을 사용하여 계산을 하기때문에
+    // 특정 소수들은 위처럼 다른 결과값이 나올때가 있다. 
+    // 때문에 소수점을 없애고 계산을 안 후 다시 맞춰줘야 할 필요가 있다.
+
+    console.log((a * 10 + b * 10 ) / 10);
+
+    console.log(Math);
+
+    // 절대값
+    // Math.abd(변수명);
+
+    var num = 123;
+    var num2 = -123;
+
+    console.log(Math.abs(num2));
+
+    // 난수 생성
+
+    console.log(Math.random());
+    // 아무런 설정도 하지 않았을때 0부터 1 사이의 랜덤값 생성
+    
+    console.log(Math.random()*1000);
+    // 난수의 최대값 설정방법
+    // 0~1000사이의 난수 생성
+    // 하지만 이런식으로 난수를 생성하면 소수점까지 발생함
+    // 이를 정수로 바꿔주기 위해서 반올림, 내림, 올림등의 추가작업이 필요함.
+    
+    console.log(Math.floor(5.8));
+    // 내림
+    console.log(Math.ceil(5.1));
+    // 올림
+    console.log(Math.round(5.5));
+    // 반올림
+
+    // 내림,올림,반올림 모두 기본적으로 0의자리에서 진행이됨.
+    
+    console.log(Math.floor(3.141592*100)/100);
+    // 바꾸고 싶은 자릿수만큼 곱해준후 다시 나누어주는 방법이 필요함.
+
+    console.log(Math.floor(Math.random()*1000));
+    // 이런 방식으로 랜덤으로 생성한 수를 정수로 변환가능.
+
+    console.log(Math.pow(2,4));
+    // 2의 4승
+    console.log(Math.sqrt(9));
+    // 루트    
+
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 확인</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    var a = 10;
+    var b = 5;
+    var c = 3;
+    var d = '10';
+
+    console.log(a+b);
+    // 덧셈
+    console.log(a-b);
+    // 뺄셈
+    console.log(a*b);
+    // 곱하기
+    console.log(a/b);
+    // 나누기
+    console.log(a%b);
+    console.log(a%c);
+    // 나눈 후 나머지
+    console.log(a^b);
+    // 제곱
+
+    console.log(++a);
+    console.log(a++);
+    console.log(--a);
+    console.log(a--);
+
+    console.log(a == 10);
+    console.log(a == 3);
+    // 두 값이 같은걸 확인하는 연산자
+    console.log(a == d);
+    console.log(a === d);
+    console.log(d === '10');
+    // == 과 ===의 차이
+    // == 은 해당 변수안의 값만을 비교 같으면 true, 다르면 false
+    // === 은 변수 내부의 형태(숫자, 문자, 불리언형 등) 까지 같아야 True 이외의 경우는 false
+
+    console.warn(a != 10);
+    console.warn(a != '10');
+    console.warn(a !== '10');
+    // !가 앞에 붙으면 반대의 의미
+    // != , !== 은 ==과 === 같음
+    // != 값만 비교해서 같으면 false, 다르면 true
+    // !== 값과 변수 내부의 형태가 같으면 false, 다르면 true
+
+
+    // 크기비교 연산자
+    console.log(a > 5);
+    // 왼쪽이 오른쪽보다 더 크다
+    console.log(a < 5);
+    // 오른쪽이 왼쪽보다 더 크다
+    console.log(a >= 10);
+    // 왼쪽이 오른쪽보다 같거나 크다
+    console.log(a <= 10);
+    // 오른쪽이 왼쪽보다 같거나 크다
+</script>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 기본개념</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+
+<script>
+    var stock = {
+        name : '애플',
+        price : 150.81,
+        products : ['아이폰', '아이패드', '에어팟'],
+        from : '나스닥',
+        status: true
+    }
+    // 객체의 생성
+    // 객체 내부의 값은 = 이 아닌 : 를 통해 생성할수 있다.
+    // 객체에는 숫자, 문자, 배열, 불리언형 등 모든 타입을 넣어줄수 있음.
+
+    console.log(stock);
+    
+    console.log(stock['name']);
+    console.log(stock['price']);
+    console.log(stock['products'][0]);
+    console.log(stock['products'][1]);
+    console.log(stock['products'][2]);
+    console.log(stock['from']);
+    console.log(stock['status']);
+    // 객체명 ['속성명'] 으로 접근
+    // 객체는 생성해줄때 선언해준 속성명으로 값을 가져올 수 있다.
+
+    console.log(stock.name);
+    console.log(stock.price);
+    console.log(stock.products[0]);
+    console.log(stock.products[1]);
+    console.log(stock.products[2]);
+    console.log(stock.from);
+    console.log(stock.status);
+    // 객체명.속성명으로도 객체 내부의 값을 가져올수 있음
+
+    for (item in stock){
+        console.log(item + '의 값은 ' + stock[item]);
+    }
+    // for in 반복문을 통하여 객체 내부의 값들을 가져올 수 있다.
+    // 배열반복문과는 다르게 item 위치에 객체의 키값(속성명)이 들어간다.
+
+    // in : 객체 내부에 해당 속성명이 존재하는지 확인하는 키워드
+    // with : 객체의 속성명을 가져올때 객체명을 생략 가능 하게 해준다.
+
+    console.log('name' in stock);
+    console.log('price' in stock);
+    console.log('option' in stock);
+    // (찾을 속성명) in (객체명)
+    // 속성명이 객체 안에 존재할경우에는 true 반환.
+
+    with(stock){
+        console.log(name);
+        console.log(price);
+        console.log(products);
+        console.log(from);
+        console.log(status);
+    }
+        console.warn(name);
+    // with에 묶여있는 영역에서만 사용가능함.
+
+    var fruit = {};
+    // 빈 객체 선언
+
+    console.log(fruit);
+
+    fruit.name = '망고';
+    fruit.price = 1000;
+    fruit.from = '청북 충주';
+
+    console.log(fruit);
+    // 객체명.속성명 = 값 으로 객체에 값 선언가능함
+
+    fruit.price = 2000;
+
+    console.log(fruit);
+
+    delete(fruit.from);
+    console.log(fruit);
+    // delete(객체명.속성명)
+    // 객체에 들어있는 속성을 삭제
+
+    // 객체배열
+    // 배열 안에 객체가 들어있는 형태
+
+    var students = [];
+
+    var student1 = {
+        name : '철수',
+        eng : 70,
+        math : 85,
+        kor : 70
+    }
+    var student2 = {
+        name : '민수',
+        eng : 85,
+        math : 68,
+        kor : 77
+    }
+    var student3 = {
+        name : '영희',
+        eng : 95,
+        math : 61,
+        kor : 88
+    }
+    var student4 = {
+        name : '의중',
+        eng : 67,
+        math : 86,
+        kor : 73
+    }
+    var student5 = {
+        name : '희민',
+        eng : 90,
+        math : 93,
+        kor : 81
+    }
+
+    students.push(student1);
+    students.push(student2);
+    students.push(student3);
+    students.push(student4);
+    students.push(student5);
+
+    console.log(students);
+
+    for(var i =0; i < students.length; i++){
+        console.log('안녕하세요 제 이름은 ' + students[i].name + '입니다.');
+    }
+
+    for( i in students) {
+        console.log(students[i]);
+        for(item in students[i]){
+            console.log(students[i][item]);
+        }
+    }
+
+</script>
+<s/html>

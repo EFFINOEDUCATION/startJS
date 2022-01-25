@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체의 생성자 함수</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    // 객체지향 프로그래밍
+    // 객체지향 프로그래밍의 기본 개념은
+    // 현실세계에 있는 물체의 개념을 데이터화 시키는것.
+    
+    // 핸드폰을 예시로 생각하면
+    // 핸드폰을 이루고 있는 정보는 여러가지가 존재한다.
+
+    function person(name){
+        this.name = name;
+        this.hello = function() {
+            console.log('안녕! 난 ' + this.name + '야!');
+        }
+    }
+    // 자바스크립트에서 객체를 생성하기 위해서는 생성자 함수가 필요.
+    // 이 생성자 함수의 내부의 this는 함수 내부의 name을 의미한다.
+    
+    
+    var student = new person('철수');
+    var student2 = new person('영희');
+    
+    console.log(student.name);
+    student.hello();
+
+    console.log(student2.name)
+    student2.hello();
+
+    // 같은 생성자 함수를 통해서 만들어졌지만, 두 객체는 서로 간섭되지 않고
+    // 독립적으로 작동한다.
+
+    // 이런 방법으로 핸드폰을 이루고 있는 요소들을 객체로 만들기 위한 생성자 함수는
+
+    function Product(name, price, madeBy, weight){
+        this.name = name;
+        this.price = price;
+        this.madeBy = madeBy;
+        this.weight = weight;
+
+        this.hello = function() {  
+            console.log(`이 제품의 이름은 ${this.name} 이고 가격은 ${this.price}원 이며 ${this.madeBy}에서 생산했습니다.\n`)
+        }
+    }
+
+    let s10 = new Product('갤럭시 S10',1000000,'삼성','200g');
+
+    s10.hello();
+
+    // 이런식으로 현실 세계 요소들이 추상화가 진행된다.
+    
+
+    
+
+</script>
+</html>

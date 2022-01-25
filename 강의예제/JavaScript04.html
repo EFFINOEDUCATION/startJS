@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값과 변수선언</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+    <script>
+        x = 3;
+        // 왼쪽에는 값을 저장할 변수명 오른쪽에는 변수명에 들어갈 값
+        console.log(x);
+        // 변수명을 이용해서 사용이 가능하다
+
+        y = 4;
+        console.log(x+y);
+        // 변수명을 사용하여 덧셈이 가능.
+
+        var a = 1;
+        console.log(a);
+        // 숫자형 (Number)
+
+        var b = 'One'
+        console.log(b);
+        // 문자형 (String)
+
+        var isTrue = true;
+        var isFalse = false;
+        console.log(isTrue);
+        console.log(isFalse);
+        // 불리언 자료형 (boolean)
+
+        var isNull = null;
+        console.log(isNull);
+        // null
+
+        var isUndefined;
+        console.log(isUndefined);
+        // undefiend
+
+        var Object = {
+            name : '아이폰',
+            price : 10000000
+        }
+        console.log(Object);
+        console.log(Object.name);
+        console.log(Object.price);
+        // 객체 (Object)
+
+        var array = ['아이폰','갤럭시','아이패드','서피스'];
+        console.log(array);
+        console.log(array[0]);
+        console.log(array[1]);
+        // 배열 (Array)
+
+        var addName = function(name){
+            array.push('name');
+        }
+        // 함수 (Function)
+
+        addName('갤럭시 폴드');
+        // 함수이용
+
+        console.log(array);
+
+        a = 5;
+        console.log(a);
+
+    </script>
+</html>

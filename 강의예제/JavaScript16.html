@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <h2>
+        <a href="index.html">
+            돌아가기
+        </a>
+    </h2>
+</body>
+<script>
+    function test1 (){
+        console.log('함수 실행');
+    }
+    // 함수명(){소스코드 작성}
+    // 함수로 선언을 하면 기존과는 다르게 자동으로 실핻되지 않음.
+
+    test1();
+    // 함수명으로 함수를 호출해 주어서 실행을 시켜주어야한다
+
+    (function(){
+        console.log('호출하지 않아도 자동으로 실행.');
+    })();
+    // (function(){}());
+    // 페이지가 로딩되고 난 후 바로 작동함.
+
+    // 전달인자와 매개변수
+
+    function test2 (input){
+        console.log(input);
+    }
+
+    test2('매개변수입니다.');
+    
+    function sum (num1, num2){
+        var sumNum = num1 + num2;
+        return sumNum;
+    }
+    // 함수에서의 return은 해당 함수를 호출을 했을때
+    // 결과값으로 return 다음에 적어준 내용을 전달해줌.
+    // return은 필수값이 아니며, return이 없을경우 반환해주는 값 없이
+    // 함수만을 실행해주고 끝남
+    // return 만 적어줄 경우 해당 위치에서 반환되는 값 없이 함수의 실행이 종료된다.
+
+    console.log(sum(1,2));
+
+
+
+</script>
+</html>
